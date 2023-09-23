@@ -1,0 +1,10 @@
+[user]
+	email = sean.tronsen@gmail.com
+	name = Sean Tronsen
+[init]
+	defaultBranch = main
+[core]
+	editor = nvim
+	pager = cat
+[pull]
+	rebase = false
