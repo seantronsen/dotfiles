@@ -23,9 +23,12 @@ HISTFILESIZE=20000
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
 
+export TERM="tmux-256color"
+
 # If set, the pattern "**" used in a pathname expansion context will
 # match all files and zero or more directories and subdirectories.
-#shopt -s globstar
+shopt -s globstar
+# shopt -s dotglob
 
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
@@ -75,8 +78,7 @@ if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
 fi
 
 # set a fancy prompt (non-color, unless we know we "want" color)
-case "$TERM" in
-xterm-color | *-256color) color_prompt=yes ;;
+case "$TERM" in xterm-color | *-256color | alacritty*) color_prompt=yes ;;
 esac
 
 # uncomment for a colored prompt, if the terminal has the capability; turned
@@ -173,10 +175,6 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
-
-# ADDITIONAL SHELL OPTIONS
-export TERM=screen-256color
-shopt -s globstar
 
 # support codelldb debugging
 export PATH="$HOME/.vscode/extensions/vadimcn.vscode-lldb-1.8.1/adapter:$PATH"
