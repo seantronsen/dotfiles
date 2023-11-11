@@ -183,7 +183,6 @@ export PATH="$HOME/.vscode/extensions/vadimcn.vscode-lldb-1.8.1/lldb/bin:$PATH"
 # CLI BINARY COMMAND OVERRIDE ALIASES
 . "$HOME/.cargo/env"
 export PATH="$HOME/bin:$PATH"
-alias fd=fdfind
 alias ls=exa
 alias cat=bat
 eval "$(starship init bash)"
