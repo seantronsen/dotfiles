@@ -8,3 +8,5 @@
 	pager = cat
 [pull]
 	rebase = false
+[alias]
+	diffc = diff --compact-summary
