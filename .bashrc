@@ -148,3 +148,9 @@ alias ls=exa
 alias cat=bat
 eval "$(starship init bash)"
 eval "$(~/.cargo/bin/rtx activate bash)"
+
+# SUPPORT FOR FLATPAK
+export XDG_DATA_DIRS="/var/lib/flatpak/exports/share:$HOME/.local/share/flatpak/exports/share:$XDG_DATA_DIRS"
+
+# MACROS
+builtin bind -x '"\e[17~":"bash $HOME/bin/fzf-dir-to-tmux-session"'
