@@ -146,6 +146,7 @@ unset __conda_setup
 export PATH="$HOME/bin:$PATH"
 alias ls=exa
 alias cat=bat
+alias i3lock="i3lock -c 000000"
 eval "$(starship init bash)"
 eval "$(~/.cargo/bin/rtx activate bash)"
 
