@@ -150,6 +150,8 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 set $monitor-primary "DP-2"
 set $monitor-right "DP-4"
 
+workspace_layout default 
+
 workspace 1 output $monitor-primary
 workspace 3 output $monitor-primary
 workspace 5 output $monitor-primary
