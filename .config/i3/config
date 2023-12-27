@@ -223,4 +223,4 @@ exec_always --no-startup-id xrandr --output DP-4 --right-of DP-2 --output DP-4 -
 
 
 # SET WALLPAPER
-exec_always --no-startup-id feh --bg-fill /home/matterhorn/Pictures/cyberpunk-comic-art.png
+exec_always --no-startup-id feh --bg-fill /home/sean/Pictures/cyberpunk-comic-art.png

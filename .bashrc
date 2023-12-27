@@ -156,3 +156,5 @@ export XDG_DATA_DIRS="/var/lib/flatpak/exports/share:$HOME/.local/share/flatpak/
 # MACROS
 builtin bind -x '"\e[17~":"bash $HOME/bin/fzf-dir-to-tmux-session"'
 builtin bind -x '"\e[15~":"bash $HOME/bin/server-status"'
+source "/home/sean/sources/spack/share/spack/setup-env.sh"
+source "/home/sean/sources/spack/share/spack/bash/spack-completion.bash"
