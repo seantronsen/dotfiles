@@ -128,14 +128,14 @@ fi
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/matterhorn/miniconda3/bin/conda' 'shell.bash' 'hook' 2>/dev/null)"
+__conda_setup="$("$HOME/miniconda3/bin/conda" 'shell.bash' 'hook' 2>/dev/null)"
 if [ $? -eq 0 ]; then
 	eval "$__conda_setup"
 else
-	if [ -f "/home/matterhorn/miniconda3/etc/profile.d/conda.sh" ]; then
-		. "/home/matterhorn/miniconda3/etc/profile.d/conda.sh"
+	if [ -f "$HOME/miniconda3/etc/profile.d/conda.sh" ]; then
+		. "$HOME/miniconda3/etc/profile.d/conda.sh"
 	else
-		export PATH="/home/matterhorn/miniconda3/bin:$PATH"
+		export PATH="$HOME/miniconda3/bin:$PATH"
 	fi
 fi
 unset __conda_setup
@@ -156,5 +156,5 @@ export XDG_DATA_DIRS="/var/lib/flatpak/exports/share:$HOME/.local/share/flatpak/
 # MACROS
 builtin bind -x '"\e[17~":"bash $HOME/bin/fzf-dir-to-tmux-session"'
 builtin bind -x '"\e[15~":"bash $HOME/bin/server-status"'
-source "/home/sean/sources/spack/share/spack/setup-env.sh"
-source "/home/sean/sources/spack/share/spack/bash/spack-completion.bash"
+source "$HOME/sources/spack/share/spack/setup-env.sh"
+source "$HOME/sources/spack/share/spack/bash/spack-completion.bash"
