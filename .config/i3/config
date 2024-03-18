@@ -101,15 +101,26 @@ bindsym $mod+space focus mode_toggle
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
 set $ws1 "1: Browser"
-set $ws2 "2"
-set $ws3 "3: Terminal"
+set $ws2 "2: Terminal"
+set $ws3 "3"
 set $ws4 "4"
 set $ws5 "5"
-set $ws6 "6"
-set $ws7 "7: Steam"
-set $ws8 "8: Discord"
-set $ws9 "9: Ksnip"
-set $ws10 "10"
+set $ws6 "6: Steam"
+set $ws7 "7"
+set $ws8 "8: Notes / Obsidian"
+set $ws9 "9: Utils & KSnip"
+set $ws10 "10: Discord"
+
+# set $ws1 "1: Browser"
+# set $ws2 "2"
+# set $ws3 "3: Terminal"
+# set $ws4 "4"
+# set $ws5 "5"
+# set $ws6 "6"
+# set $ws7 "7: Steam"
+# set $ws8 "8: Discord"
+# set $ws9 "9: Ksnip"
+# set $ws10 "10"
 
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
@@ -142,25 +153,30 @@ set $monitor-right "DP-0"
 workspace_layout default
 
 workspace 1 output $monitor-primary
+workspace 2 output $monitor-primary
 workspace 3 output $monitor-primary
+workspace 4 output $monitor-primary
 workspace 5 output $monitor-primary
-workspace 7 output $monitor-primary
-workspace 9 output $monitor-primary
+workspace 6 output $monitor-primary
 
-workspace 2 output $monitor-right
-workspace 4 output $monitor-right
-workspace 6 output $monitor-right
+workspace 7 output $monitor-right
 workspace 8 output $monitor-right
+workspace 9 output $monitor-right
+workspace 0 output $monitor-right
 
 
 # define workspace constrained applications
 assign [class="brave"] $ws1
-assign [class="Alacritty"] $ws3
 assign [class="apps.py"] $ws5
-assign [class="steam"] $ws7
-assign [class="discord"] $ws8
+assign [class="steam"] $ws6
+assign [class="obsidian"] $ws8
 assign [class="ksnip"] $ws9
+assign [class="pavucontrol"] $ws9
+assign [class="blueman-manager"] $ws9
+assign [class="discord"] $ws10
 
+# comment out to spawn terminals in any workspace
+assign [class="Alacritty"] $ws2
 
 # window
 for_window [class="^Steam$" title=".*"] floating enable
