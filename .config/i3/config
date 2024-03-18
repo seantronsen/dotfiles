@@ -104,23 +104,13 @@ set $ws1 "1: Browser"
 set $ws2 "2: Terminal"
 set $ws3 "3"
 set $ws4 "4"
-set $ws5 "5"
+set $ws5 "5: OBS Capture"
 set $ws6 "6: Steam"
 set $ws7 "7"
 set $ws8 "8: Notes / Obsidian"
 set $ws9 "9: Utils & KSnip"
 set $ws10 "10: Discord"
 
-# set $ws1 "1: Browser"
-# set $ws2 "2"
-# set $ws3 "3: Terminal"
-# set $ws4 "4"
-# set $ws5 "5"
-# set $ws6 "6"
-# set $ws7 "7: Steam"
-# set $ws8 "8: Discord"
-# set $ws9 "9: Ksnip"
-# set $ws10 "10"
 
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
@@ -167,7 +157,8 @@ workspace 0 output $monitor-right
 
 # define workspace constrained applications
 assign [class="brave"] $ws1
-assign [class="apps.py"] $ws5
+assign [class="apps.py"] $ws4
+assign [class="obs"] $ws5
 assign [class="steam"] $ws6
 assign [class="obsidian"] $ws8
 assign [class="ksnip"] $ws9
