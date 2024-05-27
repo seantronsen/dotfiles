@@ -11,7 +11,7 @@ esac
 function load_config() {
 	config_dir="$HOME/.bash_config"
 	config_path="$config_dir/$1"
-	if [ -z "$1"]; then
+	if [ -z "$1" ]; then
 		echo "error: required argument \$1 which specifies the configuration file was not provided."
 	elif [ ! -f "$config_path" ]; then
 		echo "error: the configuration file at '$config_path' does not exist"
@@ -36,7 +36,7 @@ shopt -s globstar
 load_config config_less.bash
 #
 # CONFIGURE COMMAND PROMPT BEHAVIOR
-load_config prompt_config.bash
+load_config prompt-config.bash
 #
 # CONFIGURE ALIASES
 load_config aliases.bash
