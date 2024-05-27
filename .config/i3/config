@@ -148,9 +148,9 @@ bindsym $mod+Shift+minus move container to workspace number $ws11
 bindsym $mod+Shift+equal move container to workspace number $ws12
 
 # define workspace properties
-set $monitor-primary "DP-2"
-set $monitor-right "DP-0"
-set $monitor-above "DP-4"
+set $monitor-primary "DP-4"
+set $monitor-right "DP-2"
+set $monitor-above "DP-0"
 
 workspace_layout default
 
@@ -171,16 +171,17 @@ workspace $ws12 output $monitor-above
 
 
 # define workspace constrained applications
-assign [class="brave"] $ws1
-assign [class="apps.py"] $ws4
-assign [class="obs"] $ws5
-assign [class="steam"] $ws6
-assign [class="obsidian"] $ws8
-assign [class="ksnip"] $ws9
-assign [class="pavucontrol"] $ws9
-assign [class="blueman-manager"] $ws9
-assign [class="Blueman-manager"] $ws9
-assign [class="discord"] $ws10
+assign [class="^brave$"] $ws1
+assign [class="^apps.py$"] $ws4
+assign [class="^obs$"] $ws5
+assign [class="^steam$"] $ws6
+assign [class="^obsidian$"] $ws8
+assign [class="^Obsidian$"] $ws8
+assign [class="^ksnip$"] $ws9
+assign [class="^pavucontrol$"] $ws9
+assign [class="^blueman-manager$"] $ws9
+assign [class="^Blueman-manager$"] $ws9
+assign [class="^discord$"] $ws10
 
 # comment out to spawn terminals in any workspace
 assign [class="Alacritty"] $ws2
@@ -238,11 +239,10 @@ bar {
 
 
 # SET MONITORS (SYSTEM DEPENDENT)
-exec_always --no-startup-id xrandr --output DP-2 --primary \
-	--output DP-2 --mode 2560x1440 --rate 144.00  \
-	--output DP-4 --mode 2560x1440 --rate 144.00 --above DP-2 --rotate inverted \
-	--output DP-0 --mode 2560x1440 --rate 144.00 --right-of DP-2 --rotate right
-
+exec_always --no-startup-id xrandr --output DP-4 --primary \
+	--output DP-4 --mode 2560x1440 --rate 144.00  \
+	--output DP-0 --mode 2560x1440 --rate 144.00 --above DP-4  --rotate inverted \
+	--output DP-2 --mode 2560x1440 --rate 144.00 --right-of DP-4 --rotate right \
 
 # SET WALLPAPER
 exec_always --no-startup-id feh --bg-fill /home/sean/Pictures/cyberpunk-comic-art.png
