@@ -44,12 +44,6 @@ load_config aliases.bash
 # CONFIGURE CUSTOM SHELL COMMANDS
 load_config shell-commands.bash
 
-# MACROS
-builtin bind -x '"\e[17~":"bash $HOME/bin/fzf-dir-to-tmux-session"'
-builtin bind -x '"\e[15~":"bash $HOME/bin/server-status"'
-# source "$HOME/sources/spack/share/spack/setup-env.sh"
-# source "$HOME/sources/spack/share/spack/bash/spack-completion.bash"
-
 # ADDITIONAL SHELL OPTIONS
 export TERM="tmux-256color"
 
