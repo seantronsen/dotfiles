@@ -12,3 +12,6 @@ PROMPT_COMMAND="history -a;$PROMPT_COMMAND"
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
 HISTSIZE=10000
 HISTFILESIZE=20000
+
+# DEFINED IN BASHRC
+load_extras

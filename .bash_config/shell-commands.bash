@@ -13,3 +13,6 @@
 function path-print() {
 	echo $PATH | sed 's/:/\n/g'
 }
+
+# DEFINED IN BASHRC
+load_extras

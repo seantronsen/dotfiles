@@ -23,3 +23,6 @@ fi
 alias ls=exa
 alias cat=bat
 alias i3lock="i3lock -c 000000"
+
+# DEFINED IN BASHRC
+load_extras

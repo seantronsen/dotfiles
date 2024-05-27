@@ -31,3 +31,6 @@ else
 	echo "paths already initialized"
 	prep_conda
 fi
+
+# DEFINED IN BASHRC
+load_extras

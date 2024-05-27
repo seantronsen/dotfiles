@@ -33,3 +33,6 @@ if ! shopt -oq posix; then
 		. /etc/bash_completion
 	fi
 fi
+
+# DEFINED IN BASHRC
+load_extras
