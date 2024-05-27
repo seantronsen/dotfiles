@@ -20,7 +20,6 @@ if [ -x /usr/bin/dircolors ]; then
 	alias egrep='egrep --color=auto'
 fi
 
-
 alias ls=exa
 alias cat=bat
 alias i3lock="i3lock -c 000000"
