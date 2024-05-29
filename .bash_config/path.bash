@@ -18,19 +18,19 @@ function prep_conda() {
 }
 
 # SINCE MANAGING PATHS WITH TMUX REMAINS A PAIN IN THE ASS...
-if [ "$PATH_RC_COMPLETE" != "1" ]; then
+# if [ "$PATH_RC_COMPLETE" != "1" ]; then
 
-	prep_conda
-	source "$HOME/.cargo/env"
-	export PATH="$HOME/bin:$PATH"
-	eval "$(starship init bash)"
-	eval "$(~/.cargo/bin/rtx activate bash)"
-	export PATH_RC_COMPLETE=1
+prep_conda
+source "$HOME/.cargo/env"
+export PATH="$HOME/bin:$PATH"
+eval "$(starship init bash)"
+eval "$(~/.cargo/bin/rtx activate bash)"
+export PATH_RC_COMPLETE=1
 
-else
-	echo "paths already initialized"
-	prep_conda
-fi
+# else
+# 	echo "paths already initialized"
+# 	prep_conda
+# fi
 
 # DEFINED IN BASHRC
 load_extras
