@@ -182,6 +182,9 @@ assign [class="^pavucontrol$"] $ws9
 assign [class="^blueman-manager$"] $ws9
 assign [class="^Blueman-manager$"] $ws9
 assign [class="^discord$"] $ws10
+# temporary for gt ai4robotics dumb fucking tk windows.
+assign [class="^Tk$"] $ws10
+assign [class="^matplotlib$"] $ws10
 
 # comment out to spawn terminals in any workspace
 assign [class="Alacritty"] $ws2
@@ -197,8 +200,8 @@ no_focus [class="^ksnip$" title=".*"]
 # reload the configuration file
 # bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-# bindsym $mod+Shift+r restart
-bindsym $mod+Shift+r reload
+bindsym $mod+Shift+r restart
+# bindsym $mod+Shift+r reload
 # exit i3 (logs you out of your X session)
 bindsym Control+Shift+x exec --no-startup-id "i3-msg exit"
 bindsym Control+Mod1+Delete exec --no-startup-id  "i3lock -c 000000"
@@ -235,14 +238,15 @@ bindsym $mod+r mode "resize"
 bar {
 				font pango:Fira Code Regular Nerd Font Complete Mono 10
 				status_command i3blocks
+				# output DP-4
 }
 
 
 # SET MONITORS (SYSTEM DEPENDENT)
-exec_always --no-startup-id xrandr --output DP-4 --primary \
-	--output DP-4 --mode 2560x1440 --rate 144.00  \
+exec_always --no-startup-id xrandr \
+	--output DP-4 --mode 2560x1440 --rate 144.00 --primary \
 	--output DP-0 --mode 2560x1440 --rate 144.00 --above DP-4  --rotate inverted \
-	--output DP-2 --mode 2560x1440 --rate 144.00 --right-of DP-4 --rotate right \
+	--output DP-2 --mode 2560x1440 --rate 144.00 --right-of DP-4 --rotate right
 
 # SET WALLPAPER
 exec_always --no-startup-id feh --bg-fill /home/sean/Pictures/cyberpunk-comic-art.png
