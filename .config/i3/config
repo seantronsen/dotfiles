@@ -182,9 +182,10 @@ assign [class="^pavucontrol$"] $ws9
 assign [class="^blueman-manager$"] $ws9
 assign [class="^Blueman-manager$"] $ws9
 assign [class="^discord$"] $ws10
-# temporary for gt ai4robotics dumb fucking tk windows.
+# temporary for gt ai4robotics dumb fucking tk and pygame windows.
 assign [class="^Tk$"] $ws10
 assign [class="^matplotlib$"] $ws10
+assign [class="^testing_suite.*$"] $ws10
 
 # comment out to spawn terminals in any workspace
 assign [class="Alacritty"] $ws2
@@ -249,4 +250,4 @@ exec_always --no-startup-id xrandr \
 	--output DP-2 --mode 2560x1440 --rate 144.00 --right-of DP-4 --rotate right
 
 # SET WALLPAPER
-exec_always --no-startup-id feh --bg-fill /home/sean/Pictures/cyberpunk-comic-art.png
+exec_always --no-startup-id feh --bg-fill /home/sean/Pictures/Wallpapers/good-gimp-cyberpunk-city-skyline.png
