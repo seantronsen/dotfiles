@@ -1,0 +1,47 @@
+[general]
+live_config_reload = true
+
+[env]
+# TERM = "alacritty"
+
+[terminal.shell]
+# program = "/opt/homebrew/bin/bash"
+program = "/bin/bash"
+args = []                          # ["-norc", "-noprofile"]
+
+[window]
+opacity = 0.9
+title = "Alacritty Terminal Emulator"
+
+
+[scrolling]
+history = 10000
+multiplier = 3
+
+[font]
+size = 16
+
+# Some of these shortcuts are in place because of preference. Others are in
+# place so I don't think about throwing this computer into the wall for having
+# non-standard keyboard shortcuts (thanks macos...). Simply put, act as though
+# you're on linux and you'll be fine.
+[keyboard]
+bindings = [
+  # shell commands
+  { key = "F6", chars = "$HOME/bin/fzd \n" },
+
+  # ease of use
+  { key = "P", mods = "Command", action = "Paste" },
+  { key = "Key0", mods = "Command", action = "ResetFontSize" },
+  { key = "Plus", mods = "Command", action = "IncreaseFontSize" },
+  { key = "Minus", mods = "Command", action = "DecreaseFontSize" },
+  { key = "V", mods = "Control", mode = "Vi", action = "ToggleBlockSelection" },
+  { key = "Y", mode = "Vi", action = "Copy" },
+]
+
+[debug]
+render_timer = false
+persistent_logging = false
+log_level = "warn"
+print_events = false
+highlight_damage = false
