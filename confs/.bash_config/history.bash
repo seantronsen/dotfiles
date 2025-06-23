@@ -1,9 +1,7 @@
-#!/bin/bash
-
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
 HISTCONTROL=ignoreboth
-HISTIGNORE="history:cd:ls:exa:clear:exit:fd"
+HISTIGNORE="history:cd:ls:clear:exit"
 
 # append to the history file, don't overwrite it
 shopt -s histappend

@@ -1,5 +1,3 @@
-#!/bin/bash
-
 ################################################################################
 # Print the path collection/stack used by the shell environment with each path
 # displayed on a separate line. The typical use case for this command is to

@@ -22,13 +22,17 @@ esac
 #   $1: The name of the configuration file to load.
 ################################################################################
 function load_config() {
-	filepath="$HOME/.bash_config/$1"
-	if [ -z "$1" ]; then
-		echo "error: required argument \$1 which specifies the configuration file was not provided."
-	elif [ ! -f "$filepath" ]; then
-		echo "error: the configuration file at '$filepath' does not exist"
+	config_dir="$HOME/.bash_config"
+	config_path="$config_dir/$1"
+	if [ ! -d "$config_dir" ]; then
+		echo "error: configuration directory '$config_dir' does not exist"
+	elif [ -z "$1" ]; then
+		echo "error: required argument \$1 which specifies the configuration file name was not provided"
+	elif [ ! -f "$config_path" ]; then
+		echo "error: the configuration file at '$config_path' does not exist"
 	else
-		source "$filepath"
+		# echo "info: loading configuration file at '$config_path'"
+		source "$config_path"
 	fi
 }
 
@@ -55,23 +59,26 @@ function load_extras() {
 	fi
 }
 
-# # ADJUST PATH VAR
+# ADJUST PATH VAR
 load_config path.bash
-#
-# # CONFIGURE HISTORY
+
+# CONFIGURE HISTORY
 load_config history.bash
-#
+
 # CONFIGURE SHELL OPTS
-shopt -s checkwinsize
-shopt -s globstar
+# shopt -s globstar
 # shopt -s dotglob
 #
+# check the window size after each command and, if necessary,
+# update the values of LINES and COLUMNS.
+shopt -s checkwinsize
+
 # CONFIGURE LESS FOR VEWING FILES AND MANPAGES
 load_config less.bash
-#
+
 # CONFIGURE COMMAND PROMPT BEHAVIOR
 load_config prompt.bash
-#
+
 # CONFIGURE ALIASES
 load_config aliases.bash
 
@@ -79,6 +86,7 @@ load_config aliases.bash
 load_config shell-commands.bash
 
 # ADDITIONAL SHELL OPTIONS
-export TERM="tmux-256color"
+# 
 
+# LOAD RC EXTRAS
 load_extras

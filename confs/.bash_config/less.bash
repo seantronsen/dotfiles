@@ -1,4 +1,3 @@
-#!/bin/bash
 # configuration for the less command when used in bash
 
 # make less more friendly for non-text input files, see lesspipe(1)
