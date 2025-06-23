@@ -14,7 +14,7 @@ alias la='ls -A'
 alias l='ls -CF'
 
 # misc 
-if command -v i3lock; then
+if command -v i3lock &> /dev/null; then
 	alias i3lock="i3lock -c 000000" # todo: move to system extras
 fi
 
