@@ -85,8 +85,5 @@ load_config aliases.bash
 # CONFIGURE CUSTOM SHELL COMMANDS
 load_config shell-commands.bash
 
-# ADDITIONAL SHELL OPTIONS
-# 
-
 # LOAD RC EXTRAS
 load_extras

@@ -23,7 +23,7 @@ size = 16
 [keyboard]
 bindings = [
   # shell commands
-  { key = "F6", chars = "$HOME/bin/fzd \n" },
+  # { key = "F6", chars = "$HOME/bin/fzd \n" },
 
   # todo: create seperate branches for macos / linux / distro
   # all can derived from one common main branch and cherry pick files in as
