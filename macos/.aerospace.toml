@@ -1,0 +1,98 @@
+# Reference: https://github.com/i3/i3/blob/next/etc/config
+default-root-container-layout = 'tiles'
+enable-normalization-flatten-containers = false
+enable-normalization-opposite-orientation-for-nested-containers = false
+
+# mouse follows focus
+on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
+on-focus-changed = ['move-mouse window-lazy-center']
+
+
+[mode.main.binding]
+cmd-enter = 'exec-and-forget open -n /Applications/Alacritty.app'
+# cmd-q = 'close --quit-if-last-window'
+cmd-comma = 'balance-sizes'
+# cmd-backtick = 'exec-and-forget open -n ~'                        # what is this even for ?
+
+
+# i3 wraps focus by default
+cmd-h = 'focus --boundaries all-monitors-outer-frame left'
+cmd-j = 'focus --boundaries all-monitors-outer-frame down'
+cmd-k = 'focus --boundaries all-monitors-outer-frame up'
+cmd-l = 'focus --boundaries all-monitors-outer-frame right'
+
+cmd-shift-h = 'move left'
+cmd-shift-j = 'move down'
+cmd-shift-k = 'move up'
+cmd-shift-l = 'move right'
+
+# cmd-n = 'split horizontal'
+# cmd-v = 'split vertical'
+# cmd-s = 'layout v_accordion' # 'layout stacking' in i3
+# cmd-w = 'layout h_accordion' # 'layout tabbed' in i3
+# cmd-e = 'layout tiles horizontal vertical' # 'layout toggle split' in i3
+
+cmd-shift-space = 'layout floating tiling' # 'floating toggle' in i3
+cmd-f = 'fullscreen'
+
+
+cmd-1 = 'workspace 1'
+cmd-2 = 'workspace 2'
+cmd-3 = 'workspace 3'
+cmd-4 = 'workspace 4'
+cmd-5 = 'workspace 5'
+cmd-6 = 'workspace 6'
+cmd-7 = 'workspace 7'
+cmd-8 = 'workspace 8'
+cmd-9 = 'workspace 9'
+cmd-0 = 'workspace 10'
+
+cmd-shift-1 = 'move-node-to-workspace 1'
+cmd-shift-2 = 'move-node-to-workspace 2'
+cmd-shift-3 = 'move-node-to-workspace 3'
+cmd-shift-4 = 'move-node-to-workspace 4'
+cmd-shift-5 = 'move-node-to-workspace 5'
+cmd-shift-6 = 'move-node-to-workspace 6'
+cmd-shift-7 = 'move-node-to-workspace 7'
+cmd-shift-8 = 'move-node-to-workspace 8'
+cmd-shift-9 = 'move-node-to-workspace 9'
+cmd-shift-0 = 'move-node-to-workspace 10'
+
+cmd-shift-r = 'reload-config'
+cmd-r = 'mode resize'
+
+[workspace-to-monitor-force-assignment]
+1 = 1
+2 = 1
+3 = 1
+4 = 1
+5 = 1
+6 = 1
+7 = 1
+8 = 1
+9 = ["^MSI.*", 1]
+10 = ["^MSI.*", 1]
+
+# use `aerospace list-apps` to get target application id
+[[on-window-detected]]
+if.app-id = 'sc.fiji'
+check-further-callbacks = false
+run = ['layout floating', 'move-node-to-workspace 9']
+
+# ensure vlc media player is tiled instead of floated (default?)
+[[on-window-detected]]
+if.app-id = 'org.videolan.vlc'
+run = ['layout tiling', 'move-node-to-workspace 9']
+
+# matplotlib windows
+[[on-window-detected]]
+# if.app-id = 'NULL-APP-BUNDLE-ID'
+if.app-name-regex-substring = '.*[p|P]ython.*'       # Case insensetive regex substring
+run = ['layout tiling', 'move-node-to-workspace 10']
+
+[mode.resize.binding]
+h = 'resize width -50'
+j = 'resize height +50'
+k = 'resize height -50'
+l = 'resize width +50'
+esc = 'mode main'
