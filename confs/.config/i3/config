@@ -208,7 +208,6 @@ bindsym $mod+r mode "resize"
 # start i3bar to display a workspace widget bar 
 bar {
 	status_command i3blocks
-	output DP-4
 }
 
 
