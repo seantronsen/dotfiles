@@ -151,31 +151,22 @@ workspace $ws12 output $monitor-above
 
 
 # define workspace constrained applications
-assign [class="^brave$"] $ws1
-assign [class="^.*.py$"] $ws4
+assign [class=".*[Bb]rave.*"] $ws1
+assign [class=".*[Aa]lacritty.*"] $ws2
+assign [class=".*.py"] $ws4
 assign [class="^obs$"] $ws5
-assign [class="^steam$"] $ws6
-assign [class="^obsidian$"] $ws8
-assign [class="^Obsidian$"] $ws8
-assign [class="^ksnip$"] $ws9
-assign [class="^pavucontrol$"] $ws9
-assign [class="^blueman-manager$"] $ws9
-assign [class="^Blueman-manager$"] $ws9
-assign [class="^discord$"] $ws10
-# comment out to spawn terminals in any workspace
-assign [class="Alacritty"] $ws2
-# temporary for gt ai4robotics dumb fucking tk and pygame windows.
-# assign [class="^Tk$"] $ws10
-# assign [class="^matplotlib$"] $ws10
-# assign [class="^testing_suite.*$"] $ws10
+assign [class=".*[Ss]team.*"] $ws6
+assign [class=".*[Oo]bsidian.*"] $ws8
+assign [class=".*[Kk]snip.*"] $ws9
+assign [class=".*[Pp]avucontrol.*"] $ws9
+assign [class=".*[Bb]lueman-manager.*"] $ws9
+assign [class=".*[Dd]iscord.*"] $ws10
 
 # window
-for_window [class="^Steam$" title=".*"] floating enable
-for_window [class=".*ImageJ.*" title=".*"] floating enable
+for_window [class=".*[Ss]team.*" title=".*"] floating enable
+for_window [class=".*[Ii]mage[Jj].*" title=".*"] floating enable
 for_window [class=".*Fiji.*" title=".*"] floating enable
-for_window [class=".*" title=".*Fiji.*"] floating enable
-for_window [class=".*" title=".*ImageJ.*"] floating enable
-no_focus [class="^ksnip$" title=".*"]
+no_focus [class=".*[Kk]snip.*" title=".*"]
 
 # reload the configuration file
 # bindsym $mod+Shift+c reload
