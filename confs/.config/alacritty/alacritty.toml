@@ -9,7 +9,7 @@ program = "/bin/bash" # "/opt/homebrew/bin/bash"
 args = []             # ["-norc", "-noprofile"]
 
 [window]
-opacity = 0.9
+opacity = 0.95
 title = "Alacritty Terminal Emulator"
 
 
@@ -30,16 +30,16 @@ bindings = [
   # necessary
 
   # ease of use
-  { key = "P", mods = "Command", action = "Paste" },
+  # { key = "P", mods = "Command", action = "Paste" },
   { key = "P", mods = "Alt", action = "Paste" },
 
-  { key = "Key0", mods = "Command", action = "ResetFontSize" },
-  { key = "Key0", mods = "Alt", action = "ResetFontSize" },
+  # { key = "Key0", mods = "Command", action = "ResetFontSize" },
+  { key = "Backspace", mods = "Alt", action = "ResetFontSize" },
 
-  { key = "Plus", mods = "Command", action = "IncreaseFontSize" },
-  { key = "Plus", mods = "Alt", action = "IncreaseFontSize" },
+  # { key = "Plus", mods = "Command", action = "IncreaseFontSize" },
+  { key = "Equals", mods = "Alt", action = "IncreaseFontSize" },
 
-  { key = "Minus", mods = "Command", action = "DecreaseFontSize" },
+  # { key = "Minus", mods = "Command", action = "DecreaseFontSize" },
   { key = "Minus", mods = "Alt", action = "DecreaseFontSize" },
 
   { key = "V", mods = "Control", mode = "Vi", action = "ToggleBlockSelection" },
