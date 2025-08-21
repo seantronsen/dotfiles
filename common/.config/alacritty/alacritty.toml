@@ -18,7 +18,7 @@ history = 10000
 multiplier = 3
 
 [font]
-size = 14
+size = 12
 
 [keyboard]
 bindings = [
