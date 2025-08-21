@@ -5,6 +5,10 @@ live_config_reload = true
 # TERM = "alacritty"
 
 [terminal.shell]
+# <C-<arrow-key>> through bash on MacOS doesn't work properly unless using the
+# newest version of bash.
+# todo: consider some level of system path abstraction to avoid path choices at
+# runtime
 program = "/bin/bash" # "/opt/homebrew/bin/bash"
 args = []             # ["-norc", "-noprofile"]
 
