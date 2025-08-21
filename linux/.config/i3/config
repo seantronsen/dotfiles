@@ -218,4 +218,5 @@ exec_always --no-startup-id xrandr \
 	--output DP-2 --mode 2560x1440 --rate 144.00 --right-of DP-4 --rotate right
 
 # SET WALLPAPER
-exec_always --no-startup-id feh --bg-fill /home/sean/Pictures/Wallpapers/good-gimp-cyberpunk-city-skyline.png
+# exec_always --no-startup-id feh --bg-fill /home/sean/Pictures/Wallpapers/good-gimp-cyberpunk-city-skyline.png
+exec_always --no-startup-id feh --bg-fill /home/sean/Pictures/Wallpapers/the-shore-of-oblivion-1889.png
