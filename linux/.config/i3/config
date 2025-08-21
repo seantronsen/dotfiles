@@ -163,7 +163,7 @@ assign [class=".*[Bb]lueman-manager.*"] $ws9
 assign [class=".*[Dd]iscord.*"] $ws10
 
 # window
-for_window [class=".*[Ss]team.*" title=".*"] floating enable
+# for_window [class=".*[Ss]team.*" title=".*"] floating enable
 for_window [class=".*[Ii]mage[Jj].*" title=".*"] floating enable
 for_window [class=".*Fiji.*" title=".*"] floating enable
 no_focus [class=".*[Kk]snip.*" title=".*"]
