@@ -5,7 +5,7 @@ define run-installer
 @cd $@; \
 for f in $$(find . -type f); do \
 	if [ ! -d "$${HOME}/$$(dirname $$f)" ]; then  \
-		mkdir -vp '$${HOME}/$$(dirname $$f)'; \
+		mkdir -vp "$${HOME}/$$(dirname $$f)"; \
 	fi;  \
 	ln -vfst "$${HOME}/$$(dirname $$f)" "$$(realpath $$f)";  \
 done
