@@ -1,11 +1,16 @@
 [user]
     email = sean.tronsen@gmail.com
     name = Sean Tronsen
+    signingkey = 739E80F1B442C240
+[commit]
+    gpgsign = true
+[tag]
+    gpgsign = true
 [init]
     defaultBranch = main
 [core]
     editor = nvim
-    pager = cat
+    pager = delta
 [pull]
     rebase = false
 [alias]
@@ -17,11 +22,13 @@
     graph = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)' --all
     # Rebase a stack onto <new-base>, moving every branch in it.
     # Run from the top branch, or name it.  usage: git stack-rebase <new-base> [<top>]
-    stack-rebase = rebase --update-refs
+    stack-rebase = rebase --update-refs --signoff
     # Force-push every branch from <bottom> to <top> (default: HEAD), inclusive.
     # usage: git stack-push <remote> <bottom> [<top>]
     stack-push = "!f() { b=$(git for-each-ref --format='%(refname:short)' --contains \"$2\" --merged \"${3:-HEAD}\" refs/heads/) && [ -n \"$b\" ] && git push --force-with-lease \"$1\" $b; }; f"
 
+[delta]
+    paging = never
 [credential]
     helper = cache --timeout=604800
 [filter "lfs"]
