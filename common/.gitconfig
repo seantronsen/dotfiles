@@ -1,31 +1,31 @@
 [user]
-	email = sean.tronsen@gmail.com
-	name = Sean Tronsen
+    email = sean.tronsen@gmail.com
+    name = Sean Tronsen
 [init]
-	defaultBranch = main
+    defaultBranch = main
 [core]
-	editor = nvim
-	pager = cat
+    editor = nvim
+    pager = cat
 [pull]
-	rebase = false
+    rebase = false
 [alias]
-	diffc = diff --compact-summary
+    diffc = diff --compact-summary
 
     # parse relative refs like HEAD~3
-	parse = rev-parse --short
+    parse = rev-parse --short
     # stolen from https://stackoverflow.com/questions/1057564/pretty-git-branch-graphs
     graph = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)' --all
-	# Rebase a stack onto <new-base>, moving every branch in it.
-	# Run from the top branch, or name it.  usage: git stack-rebase <new-base> [<top>]
-	stack-rebase = rebase --update-refs
-	# Force-push every branch from <bottom> to <top> (default: HEAD), inclusive.
-	# usage: git stack-push <remote> <bottom> [<top>]
-	stack-push = "!f() { b=$(git for-each-ref --format='%(refname:short)' --contains \"$2\" --merged \"${3:-HEAD}\" refs/heads/) && [ -n \"$b\" ] && git push --force-with-lease \"$1\" $b; }; f"
+    # Rebase a stack onto <new-base>, moving every branch in it.
+    # Run from the top branch, or name it.  usage: git stack-rebase <new-base> [<top>]
+    stack-rebase = rebase --update-refs
+    # Force-push every branch from <bottom> to <top> (default: HEAD), inclusive.
+    # usage: git stack-push <remote> <bottom> [<top>]
+    stack-push = "!f() { b=$(git for-each-ref --format='%(refname:short)' --contains \"$2\" --merged \"${3:-HEAD}\" refs/heads/) && [ -n \"$b\" ] && git push --force-with-lease \"$1\" $b; }; f"
 
 [credential]
-	helper = cache --timeout=604800
+    helper = cache --timeout=604800
 [filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true
