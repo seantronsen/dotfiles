@@ -20,6 +20,8 @@
     parse = rev-parse --short
     # stolen from https://stackoverflow.com/questions/1057564/pretty-git-branch-graphs
     graph = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)' --all
+    # `log --oneline` plus signature status (%G?: G good, N none, E can't check, B bad, ...)
+    log-signature = log --format='%C(auto)%h %G?%d %s'
     # Rebase a stack onto <new-base>, moving every branch in it.
     # Run from the top branch, or name it.  usage: git stack-rebase <new-base> [<top>]
     stack-rebase = rebase --update-refs --signoff
@@ -29,6 +31,7 @@
 
 [delta]
     paging = never
+    true-color = always
 [credential]
     helper = cache --timeout=604800
 [filter "lfs"]
