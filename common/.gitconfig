@@ -31,6 +31,8 @@
     # usage: git stack-push <remote> <bottom> [<top>]
     stack-push = "!f() { b=$(git for-each-ref --format='%(refname:short)' --contains \"$2\" --merged \"${3:-HEAD}\" refs/heads/) && [ -n \"$b\" ] && git push --force-with-lease \"$1\" $b; }; f"
 	log-stat = "!f() { git log --oneline --stat \"$@\"; }; f"
+    # Force-delete every local branch except the current one (merged or not).
+    branch-prune = "!git branch | grep -v '*' | xargs git branch -D"
 
 [delta]
     paging = never
