@@ -28,6 +28,7 @@
     # Force-push every branch from <bottom> to <top> (default: HEAD), inclusive.
     # usage: git stack-push <remote> <bottom> [<top>]
     stack-push = "!f() { b=$(git for-each-ref --format='%(refname:short)' --contains \"$2\" --merged \"${3:-HEAD}\" refs/heads/) && [ -n \"$b\" ] && git push --force-with-lease \"$1\" $b; }; f"
+	log-stat = "!f() { git log --oneline --stat \"$@\"; }; f"
 
 [delta]
     paging = never
@@ -39,3 +40,5 @@
     smudge = git-lfs smudge -- %f
     process = git-lfs filter-process
     required = true
+[interactive]
+	diffFilter = delta --color-only
